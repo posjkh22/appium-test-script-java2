@@ -1,0 +1,16 @@
+package EVA.appiumdemo.test;
+
+import org.junit.Test;
+
+import lib.TestHelper;
+
+public class Test1 extends BaseTest {
+
+	@Test
+    public void run()
+    {
+        System.out.println("I am inside Test1");
+        
+        TestHelper.getHtmlText(driver, "text1")
+    }
+}

@@ -1,0 +1,14 @@
+package lib;
+
+import org.openqa.selenium.By;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class TestHelper {
+
+	public MobileElement findByHtmlElementId(AndroidDriver<MobileElement> driver, String id) {		
+		return (MobileElement) driver.findElement(By.xpath("//*[@resource-id='text1']"));
+	}
+	
+}

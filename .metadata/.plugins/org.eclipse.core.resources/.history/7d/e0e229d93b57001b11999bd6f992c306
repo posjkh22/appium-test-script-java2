@@ -1,0 +1,67 @@
+package EVA.appiumdemo;
+
+import java.net.URL;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
+ 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+ 
+public class BaseTest {
+ 
+    AndroidDriver<MobileElement> driver;
+     
+    @Before
+    public void setup()
+    {
+        try
+        {
+            DesiredCapabilities caps= new DesiredCapabilities();
+            caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"ANDROID");
+            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9");
+            caps.setCapability(MobileCapabilityType.DEVICE_NAME,"adv_9");
+            caps.setCapability(MobileCapabilityType.UDID,"emulator-5554");
+            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
+            caps.setCapability(MobileCapabilityType.APP, "D:\\webApp\\cordova\\hello\\platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk");
+            caps.setCapability("appPackage","com.example.helloapp");
+            caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+ 
+            //caps.setCapability("appActivity","MainActivity");
+            URL url = new URL("http://127.0.0.1:4723/wd/hub");
+                         
+            AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(url,caps);
+            //driver = new AppiumDriver<MobileElement>(url, caps);
+       
+            //MobileElement el1 = (MobileElement) driver.findElementById("text1");
+            
+            MobileElement el1 = (MobileElement) driver.findElement(By.xpath("//div[contains(@id,‘ext-foo_text-’)]")
+            		
+            //MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("text1");            
+            String text1_string = el1.getText();
+            System.out.println(text1_string);
+            
+           
+        }catch(Exception exp)
+        {
+            System.out.println("exception()");
+        }
+    }
+     
+     
+    @Test
+    public void sampleTest()
+    {
+        System.out.println("I am inside sample Test");
+    }
+      
+      
+    @After
+    public void teardown()
+    {
+        System.out.println("teardown()");
+    }
+}

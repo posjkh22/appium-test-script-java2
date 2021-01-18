@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Test1" project="appiumdemo" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="EVA.appiumdemo.test.Test1" time="41.793">
+    <testcase name="run" classname="EVA.appiumdemo.test.Test1" time="21.814"/>
+    <testcase name="sampleTest" classname="EVA.appiumdemo.test.Test1" time="19.979"/>
+  </testsuite>
+</testrun>

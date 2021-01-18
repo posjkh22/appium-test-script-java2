@@ -1,0 +1,29 @@
+package lib;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.touch.TouchActions;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class TestHelper {
+
+	public MobileElement findElementById(AndroidDriver<MobileElement> driver, String id) {		
+		return (MobileElement) driver.findElement(By.xpath("//*[@resource-id='text1']"));
+	}
+	
+	public String getHtmlText(AndroidDriver<MobileElement> driver, String id) {
+		return ((MobileElement) this.findElementById(driver, id)).getText();
+	}
+	
+	public void SingleTap(AndroidDriver<MobileElement> driver, String id) {
+		TouchActions action = new TouchActions(driver);
+		action.singleTap((MobileElement) this.findElementById(driver, id));
+		action.perform();
+	}
+	
+	public void backKey(AndroidDriver<MobileElement> driver, String id) {
+		TouchActions action = new TouchActions(driver);
+
+	}
+}

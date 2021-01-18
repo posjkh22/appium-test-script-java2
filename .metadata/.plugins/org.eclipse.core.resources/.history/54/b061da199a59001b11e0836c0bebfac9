@@ -1,0 +1,53 @@
+package EVA.appiumdemo.test;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import lib.TestHelper;
+
+public class Test1 extends BaseTest {
+
+	@Test
+    public void run()
+    {
+		/*
+        System.out.println("Test1-1 (getHtmlText)");
+        String test1_result_string = TestHelper.getHtmlText(driver, "text1");
+        System.out.println(" -> " + test1_result_string);
+        */
+		
+		//System.out.println("Test1-1 (getHTmlTextList)");
+        //String str1 = TestHelper.getHtmlTextByCssSelector(driver, "text");
+        //System.out.println(" -> " + str1);
+     
+		/*
+        System.out.println("Test1-2 (getHTmlTextList)");
+        List<String> list = TestHelper.getHTmlTextList(driver, "text");
+        for(String str: list) {
+            System.out.println(" -> " + str);
+        }
+        */
+        
+        /*
+        System.out.println("Test1-3 (getHTmlTextListByClassName)");
+        List<String> list2 = TestHelper.getHTmlTextListByClassName(driver, "aa");
+        for(String st2r: list2) {
+            System.out.println(" -> " + st2r);
+        }
+        */
+        
+        //String test2_result_string = TestHelper.getHtmlTextByClassName(driver, "aa");
+        //System.out.println(" -> " + test2_result_string);
+        
+        
+       
+        System.out.println("Test1-2 (ScreenShot)");
+        TestHelper.ScreenShot(driver);
+        
+        
+        System.out.println("Test1-3 (SingleTap)");
+        TestHelper.SingleTap(driver, "text1");
+        
+    }
+}
